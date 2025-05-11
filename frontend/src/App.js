@@ -1,8 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import './App.css' // Keep the original App.css for now, will integrate Tailwind later
+// import './App.css'; // Keep the original App.css for now, will integrate Tailwind later
 
 // Import Components
+import Header from './components/Header'
+import Footer from './components/Footer'
 import Home from './components/Home'
 import Services from './components/Services'
 import Portfolio from './components/Portfolio'
@@ -16,7 +18,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Navigation would go here */}
+        <Header /> {/* Add Header component here */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -27,6 +29,7 @@ function App() {
           <Route path="/quote" element={<Quote />} />
           <Route path="/adminpanel" element={<AdminPanel />} />
         </Routes>
+        <Footer /> {/* Add Footer component here */}
       </div>
     </Router>
   )
